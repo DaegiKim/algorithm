@@ -1,4 +1,4 @@
-package leetcode.top_interview_questions_easy.array.distribute_candies;
+package leetcode.distribute_candies;
 
 import java.util.Arrays;
 

@@ -33,6 +33,7 @@ public class Main {
 
             if(nation.number == target) {
                 System.out.println(rank);
+                break;
             }
         }
     }

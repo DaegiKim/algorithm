@@ -7,14 +7,13 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         String[] s = scanner.nextLine().split(" ");
 
-        Map<String, Integer> map = new LinkedHashMap<>();
-
         int n = Integer.parseInt(s[0]);
         int m = Integer.parseInt(s[1]);
 
+        Map<String, Integer> map = new LinkedHashMap<>();
+
         for (int i = 0; i < n; i++) {
-            String name = scanner.nextLine();
-            map.put(name, i+1);
+            map.put(scanner.nextLine(), i+1);
         }
 
         List<String> keyList = new ArrayList<>(map.keySet());

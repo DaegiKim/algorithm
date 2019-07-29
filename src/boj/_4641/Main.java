@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String s = null;
+        String s;
         while(!(s=br.readLine()).equals("-1")) {
             String[] split = s.split(" ");
 

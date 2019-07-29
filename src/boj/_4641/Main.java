@@ -1,8 +1,6 @@
 package boj._4641;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
@@ -12,6 +10,8 @@ import java.util.stream.Collectors;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
         String s;
         while(!(s=br.readLine()).equals("-1")) {
             String[] split = s.split(" ");
@@ -27,7 +27,11 @@ public class Main {
 
             long count = list.stream().filter(i -> set.contains(i * 2)).count();
 
-            System.out.println(count);
+            bw.write(String.valueOf(count));
+            bw.newLine();
         }
+
+        bw.flush();
+        bw.close();
     }
 }

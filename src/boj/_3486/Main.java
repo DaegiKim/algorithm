@@ -1,28 +1,29 @@
 package boj._3486;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
+import java.util.Scanner;
 
 public class Main {
+    private static final Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int T = Integer.parseInt(br.readLine());
+        int numOfTestCases = scanner.nextInt();
 
-        while (T-->0) {
-            String line = br.readLine();
-            String[] split = line.split(" ");
+        while (numOfTestCases-- > 0) {
+            int firstNum = scanner.nextInt();
+            int secondNum = scanner.nextInt();
 
-            int left = Integer.parseInt(reverse(split[0]));
-            int right = Integer.parseInt(reverse(split[1]));
-
-            int sum = left+right;
-            String reversedSum = reverse(String.valueOf(sum));
-            System.out.println(Integer.parseInt(reversedSum));
+            int reversedSum = addNumbersWithReverse(firstNum, secondNum);
+            System.out.println(reversedSum);
         }
     }
 
-    private static String reverse(String source) {
-        return new StringBuilder(source).reverse().toString();
+    private static int addNumbersWithReverse(int firstNum, int secondNum) {
+        return reverse(reverse(firstNum) + reverse(secondNum));
+    }
+
+    private static int reverse(int source) {
+        String reversedNum = new StringBuilder(String.valueOf(source)).reverse().toString();
+        return Integer.parseInt(reversedNum);
     }
 }
